@@ -1,0 +1,9 @@
+<!-- goals/show -->
+
+<h1><%= @goal.title %></h1>
+
+<p><%= @goal.description %></p>
+<p>Goal Completed: <%= @goal.completed ? "yes" : "no" %></p>
+
+<%= link_to "Edit Goal", edit_user_goal_url(@goal.owner, @goal) %>
+<%= link_to "Delete Goal", goal_url(@goal) %>

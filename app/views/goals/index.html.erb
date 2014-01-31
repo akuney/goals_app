@@ -4,7 +4,9 @@
 
 <% @goals.each do |goal| %>
   <ul>
-    <li><%= goal.title %></li>
+    <li>
+      <%= link_to goal.title, user_goal_url(goal.owner, goal) %>
+    </li>
   </ul>
 <% end %>
 
