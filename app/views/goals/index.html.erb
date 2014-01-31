@@ -2,9 +2,9 @@
 
 <h2>My Goals</h2>
 
-<% @user.goals.each do |goal| %>
+<% @goals.each do |goal| %>
   <ul>
-    <li><%= goal.title unless current_user.id != goal.owner_id %></li>
+    <li><%= goal.title %></li>
   </ul>
 <% end %>
 

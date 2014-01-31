@@ -3,7 +3,8 @@
 <h2>New Goal</h2>
 
 
-<form action="<%= goals_url %>" method="post">
+<form action="<%= user_goals_url(@user) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
 
 <p>
   <label>
@@ -20,9 +21,9 @@
 </p>
 
 <p>
-  <input type="radio" name="goal[private]" value="false" checked="checked">Public
+  <input type="radio" name="goal[hidden]" id="Public" value="false" checked="checked">Public
   <br>
-  <input type="radio" name="goal[private]" value="true">Private
+  <input type="radio" name="goal[hidden]" id="Private" value="true">Private
 </p>
 
   <p><input type="submit" value="Create This Goal"></p>

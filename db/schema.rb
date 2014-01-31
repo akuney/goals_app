@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140131201037) do
+ActiveRecord::Schema.define(:version => 20140131220625) do
 
   create_table "goals", :force => true do |t|
     t.integer  "owner_id",                       :null => false
     t.string   "title",                          :null => false
     t.text     "description"
-    t.boolean  "private",     :default => false
     t.boolean  "completed",   :default => false
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+    t.boolean  "hidden",      :default => false
   end
 
   add_index "goals", ["owner_id"], :name => "index_goals_on_owner_id"

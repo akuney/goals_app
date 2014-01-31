@@ -2,15 +2,22 @@ class GoalsController < ApplicationController
   before_filter :require_logged_in_user, only: [:new, :index]
 
   def index
-    @user = User.includes(:goals).find(params[:user_id])
+    @user = User.find(params[:user_id])
+    @goals = @user.goals
+
+    unless current_user == @user
+      @goals.reject!{|goal| goal.hidden == true}
+    end
   end
 
   def new
     @goal = current_user.goals.new
+    @user = current_user
   end
 
   def create
     @goal = current_user.goals.new(params[:goal])
+    @user = current_user
 
     if @goal.save
       redirect_to user_goals_url(@goal.owner)
