@@ -1,3 +1,31 @@
 <!-- goals/new -->
 
-<h2>My goals</h2>
+<h2>New Goal</h2>
+
+
+<form action="<%= goals_url %>" method="post">
+
+<p>
+  <label>
+    Title
+    <input name="goal[title]" value="<%= @goal.title %>">
+  </label>
+</p>
+
+<p>
+  <label>
+    Description
+    <input name="goal[description]" value="<%= @goal.description %>">
+  </label>
+</p>
+
+<p>
+  <input type="radio" name="goal[private]" value="false" checked="checked">Public
+  <br>
+  <input type="radio" name="goal[private]" value="true">Private
+</p>
+
+  <p><input type="submit" value="Create This Goal"></p>
+</form>
+
+

@@ -27,7 +27,7 @@ feature "Goals" do
       fill_in "Username", with: "billybob"
       fill_in "Password", with: "hotdog"
       click_on "Sign Up"
-      click_link("Create New Goal")
+      click_link "Create New Goal"
     end
 
     it "new goals link should take you to new goals page" do
@@ -42,7 +42,7 @@ feature "Goals" do
     end
 
     it "has a goal creation button" do
-      expect(page).to have_content("Create This Goal")
+      expect(page).to have_button("Create This Goal")
     end
   end
 
@@ -66,7 +66,7 @@ feature "Goals" do
 
     it "Other users can see public goals" do
       click_button "Log Out"
-      click_link "Sign Up"
+      click_link "Sign Me Up"
 
       fill_in "Username", with: "jackiejohn"
       fill_in "Password", with: "yeehaw"
@@ -121,7 +121,7 @@ feature "Goals" do
 
     it "other people can't see the goal we just made" do
       click_button "Log Out"
-      click_link "Sign Up"
+      click_link "Sign Me Up"
 
       fill_in "Username", with: "jackiejohn"
       fill_in "Password", with: "yeehaw"

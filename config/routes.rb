@@ -5,5 +5,6 @@ GoalSetter::Application.routes.draw do
   end
   resource :session
 
+  resources :goals, except: [:new, :index]
 
 end
