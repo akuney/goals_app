@@ -29,10 +29,16 @@ end
 group :test do
   gem 'guard-rspec'
   gem 'capybara'
+  gem "shoulda-matchers"
 end
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
